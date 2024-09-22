@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruds</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-body-secondary">
+  <div class="container py-5">
+    <form>
+      <div class="alert alert-danger d-none" id="existMsg">This product already exist</div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="ProductName" placeholder="name@example.com" oninput="nameValidation()">
+        <label for="ProductName">Product Name</label>
+        <p class="mt-2 d-none text-danger">* First char just be capital</p>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="ProductPrice" placeholder="name@example.com">
+        <label for="ProductPrice">Product Price</label>
+        <p class="mt-2 d-none text-danger">* write any number from 1 to 200</p>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="ProductCategory" placeholder="name@example.com" list="category">
+        <label for="ProductCategory">Product Category</label>
+        <datalist id="category">
+          <option value="Mobile">Mobile</option>
+          <option value="laptop">laptop</option>
+          <option value="tv">tv</option>
+        </datalist>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="ProductDesc" placeholder="name@example.com">
+        <label for="ProductDesc">Product Description</label>
+      </div>
+      <button id="addButton" type="button" class="btn btn-outline-info " onclick="createProduct()">Add Product</button>
+      <button id="updateButton" type="button" class="btn btn-outline-warning d-none" onclick="updateProduct()">Update Product</button>
+    </form>
+    <input type="text" id="productSearch" class="form-control w-50 m-auto" placeholder="Search..." oninput="search()">
+    <div class="my-table ">
+      <table class="table table-striped table-bordered text-center mt-5">
+        <thead>
+          <tr>
+            <th>index</th>
+            <th>product Name</th>
+            <th>product Price</th>
+            <th>product Category</th>
+            <th>product Description</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody id="data">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/all.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
